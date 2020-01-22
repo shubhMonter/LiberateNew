@@ -49,7 +49,7 @@ class Home extends Component {
       /*creates empty scene object and renderer*/
       scene = new THREE.Scene();
       pivot = new THREE.Group();
-      camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight*.9, .1, 300);
+      camera = new THREE.PerspectiveCamera(30, window.innerWidth / window.innerHeight, .1, 300);
       renderer = new THREE.WebGLRenderer({
         antialias: false,
         alpha: true
@@ -61,7 +61,7 @@ class Home extends Component {
       renderer.shadowMapSoft = false;
 
       controls = new CameraControls(camera, renderer.domElement);
-      controls.noPan = "true";
+      controls.noPan = true;
 
       controls.minDistance = 40;
       controls.maxDistance = 40;
@@ -248,10 +248,10 @@ class Home extends Component {
   render() {
     return ( <
       div >
-      <Container>
+
       <
       div id = "webGL-container" > < /div>
-      </Container>
+
       < /
       div >
     )
