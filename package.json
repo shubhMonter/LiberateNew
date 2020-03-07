@@ -1,32 +1,42 @@
 {
-  "name": "liberatenew",
-  "version": "0.0.1",
-  "description": "Personalised low cost quality education in desired selected career on open source platform running on block chain network is donated by people.",
+  "name": "lib",
+  "version": "1.0.0",
+  "description": "",
   "main": "server.js",
   "scripts": {
+    "client-install": "npm install --prefix client",
     "start": "node server.js",
-    "server":"nodemon server.js",
-    "client-install":"npm install --prefix client",
-    "client":"npm run start --prefix client",
-    "dev":"concurrently \" npm run server\" \"npm run client\" "
-    },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/shubhMonter/LiberateNew.git"
+    "server": "nodemon server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
-  "author": "",
+  "author": "shubhd",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/shubhMonter/LiberateNew/issues"
-  },
-  "homepage": "https://github.com/shubhMonter/LiberateNew#readme",
   "dependencies": {
-    "body-parser": "^1.19.0",
-    "concurrently": "^5.0.2",
-    "express": "^4.17.1",
-    "mongoose": "^5.8.4"
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.3",
+    "camera-controls": "^1.19.1",
+    "concurrently": "^4.1.0",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "gravatar": "^1.8.0",
+    "is-empty": "^1.2.0",
+    "jsonwebtoken": "^8.4.0",
+    "mongoose": "^5.9.2",
+    "node-linkedin": "^0.5.6",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0",
+    "python-shell": "^1.0.7",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
+    "reactstrap": "^8.4.1",
+    "redux-form": "^8.1.0",
+    "socket.io": "^2.2.0",
+    "three": "^0.114.0",
+    "three-css3drenderer": "^1.0.1",
+    "validator": "^10.10.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.2"
+    "nodemon": "^1.18.9"
   }
 }

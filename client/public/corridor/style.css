@@ -1,0 +1,319 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:300");
+@import url("https://fonts.googleapis.com/css?family=PT+Sans+Narrow:300");
+@import url("https://fonts.googleapis.com/css?family=Oswald:300");
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+.wrapper {
+  width: 100%;
+  height: 100%;
+    margin-left: 100px;
+    margin-top: 400px;
+}
+nav {
+  position:absolute;
+  top: 0;
+  bottom: 0;
+    height: 500px;
+  width: 200px;
+  background: #000;
+}
+nav.submenu {
+  -webkit-perspective: 1000;
+  -moz-perspective: 1000;
+  -ms-perspective: 1000;
+  perspective: 1000;
+  -webkit-transform-origin: left;
+  -moz-transform-origin: left;
+  -o-transform-origin: left;
+  -ms-transform-origin: left;
+  transform-origin: left;
+  position: absolute;
+  left: 199px;
+  top: 0;
+  bottom: 0;
+  z-index: 0;
+  width: 0;
+}
+nav.submenu > ul {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform-origin: top left;
+  -moz-transform-origin: top left;
+  -o-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-transform: rotateY(90deg);
+  -moz-transform: rotateY(90deg);
+  -o-transform: rotateY(90deg);
+  -ms-transform: rotateY(90deg);
+  transform: rotateY(90deg);
+  -webkit-transition: -webkit-transform 0.25s ease-out;
+  -moz-transition: -moz-transform 0.25s ease-out;
+  -o-transition: -o-transform 0.25s ease-out;
+  -ms-transition: -ms-transform 0.25s ease-out;
+  transition: transform 0.25s ease-out;
+  border-left: 10px solid #f8b5c2;
+  background: #000;
+  width: 200px;
+}
+ul {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  list-style: none;
+  padding: 120px 0 0 0;
+  margin: 0;
+}
+ul li a {
+  font: lighter 12px 'PT Sans Narrow', Lato, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  padding: 15px 20px;
+  color: #fff;
+  display: block;
+  text-decoration: none;
+  -webkit-box-shadow: 0 1px #fff;
+  box-shadow: 0 1px #fff;
+  white-space: nowrap;
+}
+ul li:hover {
+  background: forestgreen;
+}
+ul li:hover > a {
+  color: #fff;
+}
+ul li:hover > nav.submenu {
+  left: 200px;
+  z-index: 100;
+  -webkit-transition: -webkit-transform 0.25s ease-in;
+  -moz-transition: -moz-transform 0.25s ease-in;
+  -o-transition: -o-transform 0.25s ease-in;
+  -ms-transition: -ms-transform 0.25s ease-in;
+  transition: transform 0.25s ease-in;
+}
+ul li:hover > nav.submenu > ul {
+  -webkit-transform: rotateY(0deg);
+  -moz-transform: rotateY(0deg);
+  -o-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);
+  transform: rotateY(0deg);
+}
+ul li.sub > a {
+  position: relative;
+  0: 0;
+}
+ul li.sub > a:after {
+  content: '';
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  width: 0;
+  height: 0;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  border-width: 5px 0 5px 5px;
+  border-color: transparent #fff;
+  border-style: solid;
+}
+ul li.sub:hover > a:after {
+  border-color: transparent #a50f2d;
+}
+.logo {
+  position: absolute;
+  top: 80px;
+  left: 60px;
+  margin: -60px 0 0 -60px;
+  width: 80px;
+  height: 80px;
+  -webkit-transform: scale(0.8);
+  -moz-transform: scale(0.8);
+  -o-transform: scale(0.8);
+  -ms-transform: scale(0.8);
+  transform: scale(0.8);
+  cursor: pointer;
+}
+.logo:before,
+.logo:after {
+  font: lighter 12px Lato, sans-serif;
+  color: #fff;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.logo:before {
+  content: 'Robert';
+  position: absolute;
+  left: 100%;
+  bottom: 40%;
+  -webkit-transform-origin: bottom left;
+  -moz-transform-origin: bottom left;
+  -o-transform-origin: bottom left;
+  -ms-transform-origin: bottom left;
+  transform-origin: bottom left;
+  -webkit-transform: scale(2.2);
+  -moz-transform: scale(2.2);
+  -o-transform: scale(2.2);
+  -ms-transform: scale(2.2);
+  transform: scale(2.2);
+}
+.logo:after {
+  content: 'Messerle.com';
+  position: absolute;
+  left: 100%;
+  top: 55%;
+  -webkit-transform-origin: top left;
+  -moz-transform-origin: top left;
+  -o-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-transform: scale(1.3);
+  -moz-transform: scale(1.3);
+  -o-transform: scale(1.3);
+  -ms-transform: scale(1.3);
+  transform: scale(1.3);
+}
+.logo svg {
+  width: 80px;
+  height: 80px;
+}
+.logo path {
+  fill: #fff;
+}
+.logo:hover {
+  -webkit-transform: scale(0.9);
+  -moz-transform: scale(0.9);
+  -o-transform: scale(0.9);
+  -ms-transform: scale(0.9);
+  transform: scale(0.9);
+}
+.content {
+  margin-left: 200px;
+  padding: 0 25px;
+}
+.content h1 {
+  font: 300 52px Oswald, sans-serif;
+  margin: 0;
+  padding: 20px 0 10px;
+  line-height: 80px;
+}
+.content p {
+  font: lighter 18px/22px 'PT Sans Narrow', 'Segoe UI', sans-serif;
+}
+a{
+    margin-top: 5%;
+}
+#tp{
+    height: 50px;
+    width:250px;
+}
+#img{
+    border-collapse: collapse;
+    margin-top: 0%;
+    margin-left: 0%
+}
+#firstpage{
+    margin-top:-250px;
+    position:fixed
+        ;
+}
+#img1{
+    border-radius:36%;
+margin-bottom: 10%;
+}
+.fas fa-user-circle:before{
+    margin-left: 10px;
+}
+.dot {
+height: 260px;
+width: 260px;
+background-color: #000;
+border-radius: 50%;
+display: inline-block;
+}
+/* Fixed sidenav, full height */
+.sidenav {
+height: 960px;
+width: 260px;
+position: fixed;
+z-index: 1;
+top: 0;
+left: 0;
+background-color:black;
+overflow-x: hidden;
+padding-top: 20px;
+border-radius: 180px;
+}
+
+/* Style the sidenav links and the dropdown button */
+.sidenav a, .dropdown-btn {
+padding: 6px 8px 6px 16px;
+text-decoration: none;
+font-size: 20px;
+color: #fff;
+display: block;
+border: none;
+background: none;
+width: 100%;
+text-align: left;
+cursor: pointer;
+outline: none;
+}
+
+/* On mouse-over */
+.sidenav a:hover, .dropdown-btn:hover {
+color: lawngreen;
+
+}
+
+/* Main content */
+.main {
+margin-left: 200px; /* Same as the width of the sidenav */
+font-size: 20px; /* Increased text to enable scrolling */
+padding: 0px 10px;
+}
+
+/* Add an active class to the active dropdown button */
+.active {
+background-color: green;
+color: white;
+font-size: 30px;
+}
+
+/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+.dropdown-container {
+display: none;
+background-color: #262626;
+padding-left: 8px;
+}
+
+/* Optional: Style the caret down icon */
+.fa-caret-down {
+float: right;
+padding-right: 8px;
+}
+
+/* Some media queries for responsiveness */
+@media screen and (max-height: 450px) {
+.sidenav {padding-top: 15px;}
+.sidenav a {font-size: 15px;}
+}
+#head{
+    font-size: 40px;
+}
