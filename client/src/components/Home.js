@@ -13,7 +13,7 @@ import {
   Container
 } from 'reactstrap';
 import * as THREE from 'three';
-import CameraControls from 'camera-controls';
+
 import {
   OBJLoader2
 } from 'three/examples/jsm/loaders/OBJLoader2';
@@ -24,9 +24,9 @@ import {
 import {
   MtlObjBridge
 } from "three/examples/jsm/loaders/obj2/bridge/MtlObjBridge.js";
-CameraControls.install({
-  THREE: THREE
-});
+import CameraControls from 'camera-controls';
+import OrbitControls from 'sunzi-three-orbitcontrols';
+
 const $ = window.$;
 class Home extends Component {
   /*constructor() {
@@ -39,7 +39,8 @@ class Home extends Component {
     var stats, namm;
     var spotLight, hemi;
     var isMouseDown = true;
-
+    var mouseover;
+    var mouseout;
     var mouse, raycaster, projector;
 
     var objects = [];
@@ -62,6 +63,7 @@ class Home extends Component {
       renderer.shadowMapSoft = false;
 
       controls = new CameraControls(camera, renderer.domElement);
+      controls = new OrbitControls(camera, renderer.domElement);
       controls.noPan = true;
 
       controls.minDistance = 40;
@@ -222,22 +224,7 @@ class Home extends Component {
     function animate() {
       requestAnimationFrame(animate);
       render();
-      $(".temp_iframe")
-        .mousedown(function() {
-
-          isMouseDown = false;
-        });
-
-      $(".temp_iframe").touchstart(function() {
-        isMouseDown = true;
-      });
-      scene.rotation.y = 0;
-      if (!isMouseDown) {
-
-        scene.rotation.y = false;
-      }
-
-      renderer.render(scene, camera);
+     renderer.render(scene, camera);
     }
 
     init();

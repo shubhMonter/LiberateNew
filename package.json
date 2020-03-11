@@ -34,6 +34,8 @@
     "socket.io": "^2.2.0",
     "three": "^0.114.0",
     "three-css3drenderer": "^1.0.1",
+    "three-orbit-controls": "^82.1.0",
+    "three-orbitcontrols-ts": "^0.1.2",
     "validator": "^10.10.0"
   },
   "devDependencies": {
