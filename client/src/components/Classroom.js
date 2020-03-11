@@ -82,9 +82,9 @@ class Classroom extends Component {
       container.appendChild(renderer.domElement);
       camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 1, 10);
       camera.position.set(-100, 60, 4500);
-      //  camera.updateMatrix(); // make sure camera's local matrix is updated
-      //  camera.updateMatrixWorld(); // make sure camera's world matrix is updated
-      //  camera.matrixWorldInverse.getInverse(camera.matrixWorld);
+       camera.updateMatrix(); // make sure camera's local matrix is updated
+        camera.updateMatrixWorld(); // make sure camera's world matrix is updated
+        camera.matrixWorldInverse.getInverse(camera.matrixWorld);
       var group = new THREE.Group();
       var str = {
         "0": "/reghome",
