@@ -1,19 +1,9 @@
 import React, {
   Component
 } from 'react';
-import ReactDOM from 'react-dom';
-import {
-  Collapse,
-  Navbar,
-  NavbarToggler,
-  NavbarBrand,
-  Nav,
-  NavItem,
-  NavLink,
-  Container
-} from 'reactstrap';
-import * as THREE from 'three';
 
+import * as THREE from 'three';
+import CameraControls from 'camera-controls';
 import {
   OBJLoader2
 } from 'three/examples/jsm/loaders/OBJLoader2';
@@ -24,28 +14,20 @@ import {
 import {
   MtlObjBridge
 } from "three/examples/jsm/loaders/obj2/bridge/MtlObjBridge.js";
-import CameraControls from 'camera-controls';
-import OrbitControls from 'sunzi-three-orbitcontrols';
+CameraControls.install({
+  THREE: THREE
+});
 
-const $ = window.$;
 class Home extends Component {
   /*constructor() {
 
   }*/
   componentDidMount() {
-    /*global variables*/
-    var scene, camera, renderer;
-    var controls, pivot;
-    var stats, namm;
-    var spotLight, hemi;
-    var isMouseDown = true;
-    var mouseover;
-    var mouseout;
-    var mouse, raycaster, projector;
 
-    var objects = [];
-    var THREEx = THREEx || {};
-    THREEx.GeometryUtils = THREEx.GeometryUtils || {};
+    var scene, camera, renderer,namm;
+    var controls, pivot;
+    var isMouseDown = true;
+    var mouse, raycaster;
 
     function init() {
       /*creates empty scene object and renderer*/
@@ -63,7 +45,6 @@ class Home extends Component {
       renderer.shadowMapSoft = false;
 
       controls = new CameraControls(camera, renderer.domElement);
-      controls = new OrbitControls(camera, renderer.domElement);
       controls.noPan = true;
 
       controls.minDistance = 40;
@@ -82,24 +63,6 @@ class Home extends Component {
       light.position.set(0, 0, 0).normalize();
       scene.add(light);
 
-
-
-        /*  var loader = new OBJLoader2();
-          loader.load("assets/home/character/newall.obj", function(obj) {
-            console.log(obj);
-            obj.position.x = 0;
-            obj.position.y = 0;
-            obj.position.z = 0;
-            scene.add(obj);
-            var box = new THREE.Box3().setFromObject(obj);
-            box.getCenter(obj.position);
-            obj.position.multiplyScalar(-1);
-
-            pivot.add(obj);
-            scene.add(pivot);
-
-
-          });*/
           let modelName = 'career';
           let objLoader2 = new OBJLoader2();
 					let callbackOnLoad = function ( object3d ) {
@@ -125,14 +88,11 @@ class Home extends Component {
       document.addEventListener('mousedown', onDocumentMouseDown, false);
       document.addEventListener('touchstart', onDocumentTouchStart, false);
       document.getElementById("webGL-container").appendChild(renderer.domElement);
-
-      //$("#webGL-container").append(renderer.domElement);
     }
 
     function onDocumentTouchStart(event) {
 
       event.preventDefault();
-
       event.clientX = event.touches[0].clientX;
       event.clientY = event.touches[0].clientY;
       onDocumentMouseDown(event);
@@ -143,23 +103,17 @@ class Home extends Component {
     function onDocumentMouseDown(event) {
 
       event.preventDefault();
-
       var mousex = ((event.clientX - renderer.domElement.offsetLeft) / renderer.domElement.width) * 2 - 1;
       var mousey = -((event.clientY - renderer.domElement.offsetTop) / renderer.domElement.height) * 2 + 1;
       raycaster = new THREE.Raycaster();
       mouse = new THREE.Vector3(mousex, mousey, 2.5);
       raycaster.setFromCamera(mouse, camera);
-
       var intersects = raycaster.intersectObjects(scene.children, true);
       console.log(intersects);
 
       if (intersects.length > 0) {
 
         namm = intersects[0].object.name;
-
-
-
-
         switch (namm) {
           case "roots":
             var w = window.open('', '', 'width=100,height=100')
@@ -224,13 +178,10 @@ class Home extends Component {
     function animate() {
       requestAnimationFrame(animate);
       render();
-     renderer.render(scene, camera);
+      renderer.render(scene, camera);
     }
-
     init();
     animate();
-
-
     //refresh page auto adjust three.js section
     window.addEventListener('resize', function() {
 

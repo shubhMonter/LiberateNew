@@ -2,16 +2,7 @@ import React, {
   Component
 } from 'react';
 import ReactDOM from 'react-dom';
-import {
-  Collapse,
-  Navbar,
-  NavbarToggler,
-  NavbarBrand,
-  Nav,
-  NavItem,
-  NavLink,
-  Container
-} from 'reactstrap';
+
 import * as THREE from 'three';
 import CameraControls from 'camera-controls';
 import {
