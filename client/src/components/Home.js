@@ -5,15 +5,12 @@ import React, {
 import * as THREE from 'three';
 import CameraControls from 'camera-controls';
 import {
-  OBJLoader2
-} from 'three/examples/jsm/loaders/OBJLoader2';
+  OrbitControls
+} from "three/examples/jsm/controls/OrbitControls.js";
+//import {JSONLoader} from 'three/src/loaders/JSONLoader.js';
 import {
-  MTLLoader
-} from "three/examples/jsm/loaders/MTLLoader.js";
-
-import {
-  MtlObjBridge
-} from "three/examples/jsm/loaders/obj2/bridge/MtlObjBridge.js";
+  ObjectLoader
+} from "three/src/loaders/ObjectLoader.js"
 CameraControls.install({
   THREE: THREE
 });
@@ -24,7 +21,7 @@ class Home extends Component {
   }*/
   componentDidMount() {
 
-    var scene, camera, renderer,namm;
+    var scene, camera, renderer, namm;
     var controls, pivot;
     var isMouseDown = true;
     var mouse, raycaster;
@@ -44,12 +41,9 @@ class Home extends Component {
       renderer.shadowMap.enabled = false;
       renderer.shadowMapSoft = false;
 
-      controls = new CameraControls(camera, renderer.domElement);
-      controls.noPan = true;
-
-      controls.minDistance = 40;
-      controls.maxDistance = 40;
-
+      controls = new OrbitControls(camera, renderer.domElement);
+      controls.enablePan = false;
+      controls.enableZoom = false;
       controls.minPolarAngle = 1.6; // radians
       controls.maxPolarAngle = 1.6; // radians
       controls.addEventListener('change', render);
@@ -59,31 +53,29 @@ class Home extends Component {
       camera.position.z = 40;
       camera.lookAt(scene.position);
 
-      var light = new THREE.AmbientLight(0xffffff, 1);
+      var light = new THREE.AmbientLight(0xffffff, 1.5);
       light.position.set(0, 0, 0).normalize();
       scene.add(light);
 
-          let modelName = 'career';
-          let objLoader2 = new OBJLoader2();
-					let callbackOnLoad = function ( object3d ) {
-						scene.add( object3d );
-						console.log( 'Loading complete: ' + modelName );
-            var box = new THREE.Box3().setFromObject(object3d);
-            box.getCenter(object3d.position);
-            object3d.position.multiplyScalar(-1);
-            pivot.add(object3d);
-            scene.add(pivot);
-						//scope._reportProgress( { detail: { text: '' } } );
-					};
 
-					let onLoadMtl = function ( mtlParseResult ) {
-						objLoader2.setModelName( modelName );
-						objLoader2.setLogging( true, true );
-						objLoader2.addMaterials( MtlObjBridge.addMaterialsFromMtlLoader( mtlParseResult ), true );
-						objLoader2.load('/home/character/all.obj', callbackOnLoad, null, null, null );
-					};
-					let mtlLoader = new MTLLoader();
-					mtlLoader.load('/home/character/all.mtl', onLoadMtl );
+
+      var loader = new ObjectLoader();
+      loader.load("/home/character/allnew1.json", function(obj) {
+
+        obj.position.x = 0;
+        obj.position.y = 0;
+        obj.position.z = 0;
+        scene.add(obj);
+        var box = new THREE.Box3().setFromObject(obj);
+        box.center(obj.position);
+        obj.position.multiplyScalar(-1);
+
+        pivot.add(obj);
+        scene.add(pivot);
+
+
+      });
+
 
       document.addEventListener('mousedown', onDocumentMouseDown, false);
       document.addEventListener('touchstart', onDocumentTouchStart, false);
@@ -132,7 +124,7 @@ class Home extends Component {
             }, 3000)
             break;
           case "sports":
-            window.location.href = 'http://localhost/Liberate_Beta/threeee/PAGES/second_page/Category/cat1.html'
+            window.location.href = '/corridor'
             break;
           case "tourism":
 
@@ -159,11 +151,11 @@ class Home extends Component {
             }, 3000)
             break;
           case "science":
-            window.location.href = 'http://localhost/Liberate_Beta_latest/threeee/PAGES/Second_page_science/Category/cat2.html'
+            window.location.href = '/corridor'
             break;
           case "arts_Circle":
-          window.location.href = '/corridor'
-          break;
+            window.location.href = '/corridor'
+            break;
         }
 
       }
@@ -200,7 +192,8 @@ class Home extends Component {
       <
       div id = "webGL-container" > < /div>
 
-      < /
+      <
+      /
       div >
     )
   }
