@@ -4,24 +4,14 @@ import React, {
 import ReactDOM from 'react-dom';
 
 import * as THREE from 'three';
-import CameraControls from 'camera-controls';
+import {
+  OrbitControls
+} from "three/examples/jsm/controls/OrbitControls.js";
 import {
   CSS3DObject,
   CSS3DRenderer
 } from 'three-css3drenderer';
-import {
-  OBJLoader2
-} from 'three/examples/jsm/loaders/OBJLoader2';
-import {
-  MTLLoader
-} from "three/examples/jsm/loaders/MTLLoader.js";
 
-import {
-  MtlObjBridge
-} from "three/examples/jsm/loaders/obj2/bridge/MtlObjBridge.js";
-CameraControls.install({
-  THREE: THREE
-});
 const $ = window.$;
 class Classroom extends Component {
   /*constructor() {
@@ -90,11 +80,11 @@ class Classroom extends Component {
       }
 
       scene.add(group);
-      controls = new CameraControls(camera, renderer.domElement);
+      controls = new OrbitControls(camera, renderer.domElement);
       controls.noPan = true;
 
-      controls.minDistance = 4501.51;
-      controls.maxDistance = 4501.51;
+      controls.minDistance = 5000;
+      controls.maxDistance = 5000;
 
       controls.minPolarAngle = 1.6; // radians
       controls.maxPolarAngle = 1.6; // radians

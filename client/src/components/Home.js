@@ -37,7 +37,7 @@ class Home extends Component {
       });
       //transparent bg of html
       renderer.setClearColor(0x000000, 0);
-      renderer.setSize(window.innerWidth, window.innerHeight);
+      renderer.setSize(window.innerWidth*.90, window.innerHeight*.95);
       renderer.shadowMap.enabled = false;
       renderer.shadowMapSoft = false;
 
@@ -171,14 +171,15 @@ class Home extends Component {
       requestAnimationFrame(animate);
       render();
       renderer.render(scene, camera);
+      camera.updateProjectionMatrix();
     }
     init();
     animate();
     //refresh page auto adjust three.js section
     window.addEventListener('resize', function() {
 
-      var width = window.innerWidth;
-      var height = window.innerHeight;
+      var width = window.innerWidth*.90;
+      var height = window.innerHeight*.95;
       renderer.setSize(width, height);
       camera.aspect = width / height;
       camera.updateProjectionMatrix();
