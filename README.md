@@ -1,4 +1,4 @@
-# LiberateNew
+# Liberate
 Personalised low cost quality education in desired selected career on open source platform running on block chain network is donated by people.
 
 #We all feel the pain of not choosing right career at some point in our life. There exists a career selection problem which can give you happiness and as well as success. Not possible. And quality education is becoming pricer day by day. As education path defines career for 90% of population.
