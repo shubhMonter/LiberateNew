@@ -14,7 +14,7 @@ We are making it opensource so everyone can contribute to it to tackle such a bi
 If you find our problem and vision compelling and like our solution 1%, join our community to make a difference and contribute to it.
 
 We call are product : Liberate.
-Join us:
+<br>Join us:
  1. As Developer.
  2. As Educator.
  3. As Career Counseller.
