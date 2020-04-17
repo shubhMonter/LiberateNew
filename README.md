@@ -18,7 +18,7 @@ We call are product : Liberate.
  1. As Developer.
  2. As Educator.
  3. As Career Counseller.
- please fill this form if your interested: https://forms.gle/8bPnv8YwEWq83V9a9
+ <br>please fill this form if your interested: https://forms.gle/8bPnv8YwEWq83V9a9
  
 Lets Liberate ourseleves from existing education system which makes factory ready robots to a wholesome human being contributing for betterment of society.
 
