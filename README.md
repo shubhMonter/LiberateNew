@@ -27,7 +27,8 @@ Team Liberate.
 
  
 Product explanation video .....
-https://drive.google.com/open?id=1i65XVIe9Ez2cb7ISez0muOpoFgS9gFSI
+https://drive.google.com/open?id=1zq_0nGqdm85rSYMcNWgg_8miGDkuQbgm
+
 
 Product source code working ....
 http://35.174.167.214/liberate.com/PAGES/Home/index.html
