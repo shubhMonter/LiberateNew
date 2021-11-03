@@ -36,7 +36,7 @@
     "three-css3drenderer": "^1.0.1",
     "three-orbit-controls": "^82.1.0",
     "three-orbitcontrols-ts": "^0.1.2",
-    "validator": "^10.10.0"
+    "validator": "^13.7.0"
   },
   "devDependencies": {
     "nodemon": "^1.18.9"
